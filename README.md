@@ -1,99 +1,202 @@
 # Examly – Online Exam & Quiz Portal
 
-**Examly** is a web-based online examination and quiz platform designed to provide a simple and convenient way to conduct online tests. It aims to make assessments easier for students and provide an organized platform for managing exams and quizzes.
-
-🌐 **Live Website:** https://online-exam-quiz-frontend.onrender.com
-
-## Features
-
-- **User Authentication:** Login interface for accessing the portal.
-- **Online Examinations:** A platform for attempting online exams and quizzes.
-- **Quiz Management:** Support for organizing and managing quiz-based assessments.
-- **Student Dashboard:** A dedicated interface for students.
-- **Admin Dashboard:** Administrative features for managing examination-related activities.
-- **Responsive Interface:** Designed for convenient access through modern web browsers.
-
-## Tech Stack
-
-The project uses a web-based frontend and backend architecture.
-
-- **Frontend:** Web frontend deployed on Render
-- **Backend:** Backend service for application logic and API requests
-- **Database:** Used for storing application data
-- **Deployment:** Render
-- **Version Control:** Git and GitHub
-
-*Note: Update the technology list with the exact frameworks, database, and libraries used in the project.*
+Examly is a web-based online examination and quiz portal designed to provide a convenient platform for conducting and attempting online tests. The project aims to simplify digital assessments through an organized interface for students and administrators.
 
 ## Live Demo
 
-Visit the deployed application:
+**Website:** https://online-exam-quiz-frontend.onrender.com
 
-**[Open Examly](https://online-exam-quiz-frontend.onrender.com)**
+## Features
+
+- User login interface
+- Online exams and quizzes
+- Student interface for accessing assessments
+- Administrative interface for examination management
+- Responsive web interface
+- Backend API integration
+- Deployment on Render
+
+*Features depend on the functionality implemented in the current version of the application.*
+
+## Tech Stack
+
+- **Frontend:** React.js, Vite (assumed; verify against the project)
+- **Backend:** Node.js and Express.js (assumed; verify against the project)
+- **Database:** Configure according to the database used by the project
+- **Version Control:** Git and GitHub
+- **Deployment:** Render
+
+## Prerequisites
+
+Install the following before running the project locally:
+
+- Node.js and npm
+- Git
+- Visual Studio Code or another code editor
+- A web browser
+
+Check that Node.js and npm are installed:
+
+```bash
+node -v
+npm -v
+```
 
 ## Getting Started
 
-To run the project locally, clone the repository:
+Follow these steps to download and run Examly on your computer.
+
+### 1. Clone the Repository
+
+Open a terminal and run:
 
 ```bash
 git clone YOUR_GITHUB_REPOSITORY_URL
+```
+
+Navigate into the cloned project:
+
+```bash
 cd YOUR_PROJECT_FOLDER
 ```
 
-Install the dependencies for the frontend and backend according to their respective package files.
+Replace `YOUR_GITHUB_REPOSITORY_URL` with your actual GitHub repository URL and `YOUR_PROJECT_FOLDER` with the repository's directory name.
 
-### Run the Frontend
+### 2. Install Dependencies
+
+If your repository contains separate `frontend` and `backend` folders, install their dependencies separately.
+
+**Frontend:**
 
 ```bash
 cd frontend
 npm install
-npm run dev
 ```
 
-### Run the Backend
+**Backend:**
 
-Open a separate terminal:
+Open a second terminal from the project root:
 
 ```bash
 cd backend
 npm install
+```
+
+If the project uses a different directory structure, run `npm install` in the directory containing the relevant `package.json`.
+
+### 3. Configure Environment Variables
+
+Check whether the project includes an `.env.example` file or environment variable instructions.
+
+If required, create an `.env` file in the appropriate directory and configure the necessary values, such as:
+
+- Backend port
+- Database connection settings
+- Frontend API base URL
+- Authentication secrets
+
+Use the variable names expected by your code. Do not commit real passwords, API keys, database credentials, or authentication secrets to GitHub.
+
+### 4. Start the Backend
+
+In the backend terminal, run:
+
+```bash
 npm run dev
 ```
 
-*The commands above assume your repository contains `frontend` and `backend` directories with the corresponding npm scripts. Adjust them to match your project structure.*
+If the project does not define a `dev` script, check `backend/package.json` for the correct start command.
+
+The backend should start on its configured local port. Check the terminal output for the actual URL.
+
+### 5. Start the Frontend
+
+Open another terminal and run:
+
+```bash
+cd frontend
+npm run dev
+```
+
+Vite typically displays a local development URL such as:
+
+```text
+http://localhost:5173
+```
+
+Open the URL shown in your terminal to access the application.
+
+### 6. Access Examly
+
+Once the frontend and backend are running:
+
+1. Open the local frontend URL in your browser.
+2. Use the login page to access the application.
+3. Ensure the frontend API URL points to your running backend.
+4. Use valid credentials available in your configured database.
+
+**Note:** Login credentials and registration options depend on the authentication system implemented in the project. No default credentials are provided here because they have not been verified.
 
 ## Project Structure
 
-A typical structure for this project may look like:
+The following is an example structure. Update it to match the actual files in your repository.
 
 ```text
 Examly/
 ├── frontend/
 │   ├── src/
 │   ├── public/
-│   └── package.json
+│   ├── package.json
+│   └── vite.config.js
 ├── backend/
 │   ├── src/
-│   └── package.json
+│   ├── package.json
+│   └── .env.example
+├── .gitignore
 └── README.md
 ```
 
-## Purpose
+## Deployment
 
-Examly aims to simplify online assessments by bringing examination and quiz-related functionality into a single web application. It provides a foundation for building a more accessible and organized digital examination experience.
+Examly's frontend is available on Render:
+
+https://online-exam-quiz-frontend.onrender.com
+
+To deploy the complete application, configure the frontend and backend services, environment variables, API URL, and database according to the deployment requirements of the project.
+
+For a separate backend deployment, make sure the frontend sends API requests to the deployed backend URL instead of `localhost`.
+
+## Troubleshooting
+
+**Frontend does not start**
+- Check that Node.js and npm are installed.
+- Run `npm install` in the frontend directory.
+- Check the terminal for missing dependencies or script errors.
+
+**Backend does not start**
+- Run `npm install` in the backend directory.
+- Check the scripts in `package.json`.
+- Verify the required environment variables and database configuration.
+
+**Login does not work**
+- Confirm that the backend is running.
+- Verify the frontend API URL.
+- Check the browser's developer console and the backend logs.
+- Confirm that the supplied account exists in the configured database.
+
+**Application works locally but not after deployment**
+- Verify the Render service configuration.
+- Check the deployed backend URL and environment variables.
+- Review the deployment logs for errors.
 
 ## Future Enhancements
 
 - User self-registration
-- Automatic quiz evaluation and score calculation
-- Timer-based examinations
-- Result history and performance tracking
+- Timed examinations
+- Automatic evaluation and score calculation
+- Examination history and performance reports
 - Question bank management
-- Improved security and role-based access control
-
-## Deployment
-
-The frontend is deployed on Render and can be accessed using the live demo link above. Backend availability depends on the configured backend deployment and API connection.
+- Enhanced role-based access control
 
 ## Author
 
