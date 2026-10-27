@@ -1,173 +1,104 @@
-# QPaper Hub – Online Question Paper Portal
+# Examly – Online Exam & Quiz Portal
 
-QPaper Hub is a full-stack web application that allows students to browse, search, preview, download, and save previous question papers. Administrators can manage question papers and monitor users through an admin dashboard.
+**Examly** is a web-based online examination and quiz platform designed to provide a simple and convenient way to conduct online tests. It aims to make assessments easier for students and provide an organized platform for managing exams and quizzes.
+
+🌐 **Live Website:** https://online-exam-quiz-frontend.onrender.com
 
 ## Features
 
-### Student
-- Register and log in to an account.
-- Browse and search question papers.
-- Filter papers by department, semester, year, subject, and exam type.
-- Preview PDF question papers in the browser.
-- Download question papers.
-- Save papers for later revision.
-- View profile details.
-
-### Administrator
-- Log in to the admin dashboard.
-- Upload question papers in PDF format.
-- Edit paper details and replace PDFs.
-- Delete question papers.
-- View uploaded papers and user information.
-- View dashboard statistics.
+- **User Authentication:** Login interface for accessing the portal.
+- **Online Examinations:** A platform for attempting online exams and quizzes.
+- **Quiz Management:** Support for organizing and managing quiz-based assessments.
+- **Student Dashboard:** A dedicated interface for students.
+- **Admin Dashboard:** Administrative features for managing examination-related activities.
+- **Responsive Interface:** Designed for convenient access through modern web browsers.
 
 ## Tech Stack
 
-**Frontend**
-- React
-- Vite
-- JavaScript
-- CSS
+The project uses a web-based frontend and backend architecture.
 
-**Backend**
-- Node.js
-- Express.js
-- REST API
-- JWT authentication
-- Helmet and CORS
+- **Frontend:** Web frontend deployed on Render
+- **Backend:** Backend service for application logic and API requests
+- **Database:** Used for storing application data
+- **Deployment:** Render
+- **Version Control:** Git and GitHub
 
-**Database and Storage**
-- SQLite
-- Local file storage for uploaded PDFs
+*Note: Update the technology list with the exact frameworks, database, and libraries used in the project.*
 
-## Project Structure
+## Live Demo
 
-```text
-qpaper-hub/
-├── backend/
-│   ├── src/
-│   │   ├── routes/
-│   │   ├── middleware/
-│   │   ├── db/
-│   │   └── server.js
-│   ├── data/
-│   ├── uploads/
-│   ├── .env
-│   └── package.json
-├── frontend/
-│   ├── src/
-│   ├── public/
-│   ├── .env
-│   └── package.json
-├── .gitignore
-└── README.md
-```
+Visit the deployed application:
 
-## Prerequisites
+**[Open Examly](https://online-exam-quiz-frontend.onrender.com)**
 
-- Node.js and npm
-- Git
-- A modern web browser
+## Getting Started
 
-## Installation and Setup
-
-### 1. Clone the repository
+To run the project locally, clone the repository:
 
 ```bash
 git clone YOUR_GITHUB_REPOSITORY_URL
-cd qpaper-hub
+cd YOUR_PROJECT_FOLDER
 ```
 
-Replace `YOUR_GITHUB_REPOSITORY_URL` with your actual repository URL.
+Install the dependencies for the frontend and backend according to their respective package files.
 
-### 2. Configure the backend
+### Run the Frontend
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+### Run the Backend
+
+Open a separate terminal:
 
 ```bash
 cd backend
 npm install
-```
-
-Create a `.env` file in the `backend` folder. Configure the required environment variables based on `.env.example`.
-
-At minimum, set a secure `JWT_SECRET` value. Keep this secret private.
-
-### 3. Start the backend
-
-From the `backend` folder, run:
-
-```bash
 npm run dev
 ```
 
-The backend should run at:
+*The commands above assume your repository contains `frontend` and `backend` directories with the corresponding npm scripts. Adjust them to match your project structure.*
 
-`http://localhost:8000`
+## Project Structure
 
-Health check:
+A typical structure for this project may look like:
 
-`http://localhost:8000/api/health`
-
-### 4. Start the frontend
-
-Open a second terminal:
-
-```bash
-cd ~/Downloads/qpaper-hub/frontend
-npm install
-npm run dev
+```text
+Examly/
+├── frontend/
+│   ├── src/
+│   ├── public/
+│   └── package.json
+├── backend/
+│   ├── src/
+│   └── package.json
+└── README.md
 ```
 
-Open the frontend URL shown in the terminal, usually:
+## Purpose
 
-`http://localhost:5173`
-
-## Local Demo Credentials
-
-**Administrator**
-- Email: `admin@qpaperhub.local`
-- Password: `Admin@12345`
-
-**Student**
-- Email: `student1@qpaperhub.local`
-- Password: `Student@123`
-
-These are intended only for local demonstration if the corresponding accounts exist in your database. Change demo passwords before using the application in a shared or production environment.
-
-## API Overview
-
-| Method | Endpoint | Purpose |
-|---|---|---|
-| GET | `/api/health` | Check backend status |
-| POST | `/api/auth/login` | Authenticate a user |
-| POST | `/api/auth/register` | Register a user |
-| GET | `/api/papers` | Browse question papers |
-| GET | `/api/papers/:id` | Retrieve paper details |
-| GET | `/api/papers/:id/preview` | Preview a PDF |
-| GET | `/api/papers/:id/download` | Download a PDF |
-| POST | `/api/admin/papers` | Upload a question paper |
-
-Some endpoints require authentication or administrator permissions.
-
-## Security
-
-- Passwords should be stored as secure hashes.
-- Protected routes use authentication and role-based authorization.
-- Uploaded files are subject to file type and size validation.
-- Environment variables and secrets must not be committed to Git.
-- Demo credentials should not be used for production.
+Examly aims to simplify online assessments by bringing examination and quiz-related functionality into a single web application. It provides a foundation for building a more accessible and organized digital examination experience.
 
 ## Future Enhancements
 
-- Email verification and password recovery.
-- Improved PDF preview experience.
-- Advanced search and filtering.
-- Deployment to a public hosting platform.
-- Additional analytics and reporting.
+- User self-registration
+- Automatic quiz evaluation and score calculation
+- Timer-based examinations
+- Result history and performance tracking
+- Question bank management
+- Improved security and role-based access control
+
+## Deployment
+
+The frontend is deployed on Render and can be accessed using the live demo link above. Backend availability depends on the configured backend deployment and API connection.
 
 ## Author
 
-Developed as a full-stack web development project.
+Developed as a web development project.
 
-## License
+---
 
-This project is intended for educational and demonstration purposes.
+**Examly – Making Online Assessments Simple.**
